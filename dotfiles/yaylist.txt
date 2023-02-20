@@ -1,0 +1,1 @@
+fish-git ranger engrampa thunar-archive-plugin file-roller xarchiver ark thunar-volman raw-thumbnailer gvfs ttf-font-awesome wa    ybar-experimental-git pavucontrol vscodium  wlogout xfce-polkit google-chrome veracrypt chromium

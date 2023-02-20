@@ -1,0 +1,30 @@
+file:///home/aa/web/script.js {"mtime":1676479737113,"ctime":1676479580369,"size":1347,"etag":"3a5d1aqja1ce","orphaned":false,"typeId":""}
+$(document).ready(function() {
+    // Code for calculator buttons and functions goes here
+    var inputVal = "";
+    $(".num-btn").click(function() {
+      inputVal += $(this).text();
+      $("#input").val(inputVal);
+    });
+    
+    $("#clear").click(function() {
+      inputVal = "";
+      $("#input").val("");
+      $("#result").text("");
+    });
+    
+    $("#calculate").click(function() {
+      var input = $("#input").val();
+      var result = eval(input);
+      $("#result").text(result);
+    });
+    
+    // New code for X percentage of X calculation
+    $("#calculate-x-of-y").click(function() {
+      var x = $("#percentage-x").val();
+      var y = $("#number-y").val();
+      var result = (x / 100) * y;
+      $("#result-x-of-y").text(result);
+    });
+  });
+  

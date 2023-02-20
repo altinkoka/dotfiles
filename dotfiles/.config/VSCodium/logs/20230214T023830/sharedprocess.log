@@ -1,0 +1,13 @@
+2023-02-14 02:38:31.594 [info] Starting worker process with pid 4765 (type: fileWatcher, window: 1).
+2023-02-14 02:39:02.065 [info] Getting Manifest... ritwickdey.liveserver
+2023-02-14 02:39:02.371 [info] Installing extension: ritwickdey.liveserver
+2023-02-14 02:39:08.104 [info] Extracted extension to /home/aa/.vscode-oss/extensions/.75d02239-a920-4e41-862a-e6972a1e3ca6: ritwickdey.liveserver
+2023-02-14 02:39:08.118 [info] Renamed to /home/aa/.vscode-oss/extensions/ritwickdey.liveserver-5.7.9-universal
+2023-02-14 02:39:08.119 [info] Extracting completed. ritwickdey.liveserver
+2023-02-14 02:39:08.127 [info] Extension installed successfully: ritwickdey.liveserver
+2023-02-14 02:39:14.928 [info] Getting Manifest... tomi.xajssnippets
+2023-02-14 02:39:15.174 [info] Installing extension: tomi.xajssnippets
+2023-02-14 02:39:16.682 [info] Extracted extension to /home/aa/.vscode-oss/extensions/.528c849f-01cf-4c22-aeff-240f40d9546e: tomi.xajssnippets
+2023-02-14 02:39:16.686 [info] Renamed to /home/aa/.vscode-oss/extensions/tomi.xajssnippets-1.2.0-universal
+2023-02-14 02:39:16.687 [info] Extracting completed. tomi.xajssnippets
+2023-02-14 02:39:16.694 [info] Extension installed successfully: tomi.xajssnippets
