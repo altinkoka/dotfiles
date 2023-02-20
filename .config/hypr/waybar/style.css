@@ -1,0 +1,155 @@
+/* 
+ * Copyright (C) 2020-2023 Aditya Shakya <adi1090x@gmail.com>
+*/
+
+/** ********** Fonts ********** **/
+* {
+    font-family: "Terminus", "Iosevka Nerd Font", sans-serif;
+    font-size: 12px;
+}
+
+/** ********** Waybar Window ********** **/
+window#waybar {
+    background-color: #1E1F21;
+	color: #E5E5E5;
+    border-bottom: 0px solid #4781C0;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.5;
+}
+
+/** ********** Custom ********** **/
+
+#custom-menu,
+#custom-power {
+	color: #4781C0;
+	font-size: 12px;
+	padding: 0px 8px 0px 8px;
+}
+
+/** ********** Idle Inhibitor ********** **/
+#idle_inhibitor {
+	color: #00CD00;
+}
+#idle_inhibitor.deactivated {
+	color: #CC0000;
+}
+
+/** ********** Tray ********** **/
+#tray {
+}
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+}
+#tray > .active {
+}
+
+/** ********** MPD ********** **/
+#mpd {
+	color: #E5E5E5;
+	font-size: 12px;
+	font-weight: bold;
+}
+#mpd.disconnected {
+	color: #CC0000;
+}
+#mpd.stopped {
+	color: #CC0000;
+}
+#mpd.playing {
+	color: #4781C0;
+}
+#mpd.paused {
+}
+
+/** ********** CPU ********** **/
+#cpu {
+}
+
+/** ********** Memory ********** **/
+#memory {
+}
+
+/** ********** Disk ********** **/
+#disk {
+}
+
+/** ********** Pulseaudio ********** **/
+#pulseaudio {
+}
+#pulseaudio.bluetooth {
+}
+#pulseaudio.muted {
+	color: #CC0000;
+}
+
+/** ********** Backlight ********** **/
+#backlight {
+}
+
+/** ********** Battery ********** **/
+#battery {
+}
+#battery.charging {
+}
+#battery.plugged {
+}
+@keyframes blink {
+    to {
+        color: #E5E5E5;
+    }
+}
+#battery.critical:not(.charging) {
+}
+#battery.2.critical:not(.charging) {
+    color: #CC0000;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/** ********** Network ********** **/
+#network {
+    color: #4781C0;
+}
+#network.disconnected,#network.disabled {
+    color: #606060;
+}
+#network.linked {
+}
+#network.ethernet {
+}
+#network.wifi {
+}
+
+/** ********** WLR Desktop ********** **/
+#workspaces {
+	padding-left: 0px;
+}
+#workspaces button{
+	color: #E5E5E5;
+}
+#workspaces button.active{
+    background-color: #4781C0;
+	color: #1E1F21;
+}
+#workspaces button.urgent{
+	color: #CC0000;
+}
+#workspaces button.hidden{
+	color: #CECD00;
+}
+
+/** ********** Clock ********** **/
+#clock {
+    color: #4781C0;
+	padding-right: 10px;
+}

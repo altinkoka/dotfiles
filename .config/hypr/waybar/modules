@@ -1,0 +1,189 @@
+// Copyright (C) 2020-2023 Aditya Shakya <adi1090x@gmail.com>
+//
+// Waybar modules configuration
+{
+	// waybar-backlight
+    "backlight": {
+		"interval": 2,
+        //"device": "amdgpu_bl0",
+        "format": "<span color='#606060'>(</span> {icon} {percent}% <span color='#606060'>)</span>",
+        "format-icons": ["", "", "", ""],
+		// Commands to execute on events
+        "on-scroll-up": "light -A 5%",
+        "on-scroll-down": "light -U 5%",
+        "smooth-scrolling-threshold": 1,
+    },
+
+	// waybar-battery
+    "battery": {
+		"interval": 60,
+		//"bat": "BAT1",
+		//"adapter": "ACAD",
+		"full-at": 100,
+		"design-capacity": false,
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "<span color='#606060'>(</span> {icon} {capacity}% ({time}) <span color='#606060'>)</span>",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-full": "{icon} Full",
+        "format-icons": ["", "", "", "", ""],
+        "format-time": "{H}:{M}",
+        "tooltip": true,
+    },
+
+	// waybar-clock
+    "clock": {
+		"interval": 1,
+        "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "<span color='#606060'>(</span>  {:%H:%M:%S} <span color='#606060'>)</span>",
+        "format-alt": "<span color='#606060'>(</span>  {:%b %d, %G} <span color='#606060'>)</span>"
+    },
+
+	// waybar-cpu
+    "cpu": {
+         "interval": 5,
+         "format": "<span color='#606060'>(</span>  {usage}% <span color='#606060'>)</span>",
+    },
+           
+	// waybar-custom
+    "custom/menu": {
+         "format": "",
+         "tooltip": false,
+         "on-click": "$HOME/.config/hypr/scripts/menu",
+    },
+
+    "custom/power": {
+         "format": "",
+         "tooltip": false,
+         "on-click": "$HOME/.config/hypr/scripts/wlogout",
+    },
+
+	// waybar-disk
+    "disk": {
+         "interval": 30,
+         "format": "<span color='#606060'>(</span>  {free} <span color='#606060'>)</span>",
+    },           	
+	
+	// waybar-memory
+    "memory": {
+         "interval": 10,
+         "format": "<span color='#606060'>(</span>  {used:0.1f}G <span color='#606060'>)</span>",
+    },
+           
+	// waybar-mpd
+    "mpd": {
+        "interval": 2,
+        "unknown-tag": "N/A",
+        "format": "<span color='#606060'>(</span>  {artist} - {title} | 祥 {elapsedTime:%M:%S} <span color='#606060'>)</span>",
+        "format-disconnected": "<span color='#606060'>(</span> Disconnected <span color='#606060'>)</span>",
+        "format-paused": "<span color='#606060'>(</span> {artist} - {title} <span color='#606060'>)</span>",
+        "format-stopped": "<span color='#606060'>(</span> Stopped <span color='#606060'>)</span>",
+        "tooltip-format": "MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)",
+		// Commands to execute on events
+        "on-click": "mpc toggle",
+        "on-scroll-up": "mpc seek +00:00:01",
+        "on-scroll-down": "mpc seek -00:00:01",
+        "smooth-scrolling-threshold": 1,
+    },
+
+	// waybar-network
+    "network": {
+		"interval": 5,
+        //"interface": "wlan*", // (Optional) To force the use of this interface, set it for netspeed to work
+        "format-wifi": "<span color='#606060'>(</span>  {ipaddr} <span color='#606060'>)</span>",
+        "format-ethernet": "<span color='#606060'>(</span>  {ipaddr}/{cidr} <span color='#606060'>)</span>",
+        "format-linked": "<span color='#606060'>(</span>  {ifname} (No IP) <span color='#606060'>)</span>",
+        "format-disconnected": "<span color='#606060'>(</span> 睊 Disconnected <span color='#606060'>)</span>",
+        "format-disabled": "<span color='#606060'>(</span> 睊 Disabled <span color='#606060'>)</span>",
+        "format-alt": "<span color='#606060'>(</span>  {bandwidthUpBits} |  {bandwidthDownBits} <span color='#606060'>)</span>",
+        "tooltip-format": " {ifname} via {gwaddr}",
+        //"on-click": "[[ ! `pidof nm-connection-editor` ]] && nm-connection-editor || pkill nm-connection-e",
+    },
+
+	// waybar-pulseaudio
+    "pulseaudio": {
+        //"format": "{volume}% {icon} {format_source}",
+        "format": "<span color='#606060'>(</span> {icon} {volume}% <span color='#606060'>)</span>",
+        "format-muted": "<span color='#606060'>(</span>  Mute <span color='#606060'>)</span>",
+        "format-bluetooth": "<span color='#606060'>(</span>  {volume}% <span color='#606060'>)</span>",
+        "format-bluetooth-muted": "<span color='#606060'>(</span>  Mute <span color='#606060'>)</span>",
+        "format-source": "<span color='#606060'>(</span>  {volume}% <span color='#606060'>)</span>",
+        "format-source-muted": "<span color='#606060'>(</span>  Mute <span color='#606060'>)</span>",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "ﳌ",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "scroll-step": 5.0,
+		// Commands to execute on events
+        "on-click": "pulsemixer --toggle-mute",
+        "on-click-right": "pulsemixer --toggle-mute",
+        "smooth-scrolling-threshold": 1,
+    },
+
+	// waybar-idle-inhibitor
+    "idle_inhibitor": {
+         "format": "<span color='#606060'>(</span> {icon} <span color='#606060'>)</span>",
+         "format-icons": {
+             "activated": "",
+             "deactivated": ""
+         },
+         "timeout": 30
+    },
+
+	// waybar-wlr-taskbar
+    "wlr/taskbar": {
+         "format": "{icon}",
+         "all-outputs": false,
+         "active-first": false,
+         "icon-size": 12,
+         "icon-theme": "blackarch",
+         "tooltip-format": "{title}",
+         //"ignore-list": [
+         //    "Alacritty"
+         //],
+         "app_ids-mapping": {
+              "firefoxdeveloperedition": "firefox-developer-edition"
+         },
+         "on-click": "minimize-raise",
+         "on-click-middle": "close",
+         "on-click-right": "maximize",
+         "on-update": "",
+    },
+    
+	// waybar-wlr-workspaces
+    "wlr/workspaces": {
+         "format": "{icon}",
+         "sort-by-number": true,
+         "active-only": false,
+         "format-icons": {
+             "1": "I",
+             "2": "II",
+             "3": "III",
+             "4": "IV",
+             "5": "V",
+             "6": "VI",
+             "7": "VII",
+             "8": "VIII",
+             "urgent": "",
+             "focused": "",
+             "default": ""
+         },
+         "on-click": "activate",
+    },
+
+	// waybar-tray
+    "tray": {
+        "icon-size": 12,
+        "spacing": 5
+    }
+}
