@@ -55,7 +55,7 @@ sudo cp -r fonts/* /usr/share/fonts/
 
 # Copy dotfiles to home directory
 echo "Copying dotfiles to home directory..."
-cp -r Dotfiles/* ~/
+cp -r dotfiles/* ~/
 
 # Check if NordVPN is installed, if not install it
 if ! command -v nordvpn &> /dev/null; then
