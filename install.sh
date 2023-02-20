@@ -1,5 +1,15 @@
 #!/bin/bash
 
+#
+# Author: Iglinsc <igli.linux@gmail.com>
+#
+# This script automates the setup of my personal Arch Linux environment.
+# Feel free to modify and use for your own purposes.
+#
+# Why do Linux users prefer command line to GUI? Because they're afraid of the mouse.
+#
+
+
 echo "Starting dotfiles installation..."
 
 # Check if yay is installed, if not install it
