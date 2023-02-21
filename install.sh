@@ -39,7 +39,7 @@ else
 fi
 
 # Clone dotfiles repo and move into the directory
-git clone https://github.com/YOUR_USERNAME/dotfiles.git ~/Dotfiles
+git clone https://github.com/altinkoka/dotfiles.git ~/Dotfiles
 cd ~/Dotfiles
 
 # Install packages from pacman and yay
