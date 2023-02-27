@@ -3,11 +3,12 @@
 #
 # Author: Iglinsc <igli.linux@gmail.com>
 #
-# This script automates the setup of my personal Arch Linux environment.
-# Feel free to modify and use for your own purposes.
-#
-# Why do Linux users prefer command line to GUI? Because they're afraid of the mouse.
-#
+echo "+---------------------------------------------------+"
+echo "|              Arch Linux Setup Script              |"
+echo "+---------------------------------------------------+"
+
+echo "Welcome to the Arch Linux Setup Script. This script is designed to automate the installation process and save you time and effort. You have the option to choose between installing only the packages required to set up a clean system or the entire package list. Please make your selection accordingly and follow the prompts to complete the installation."
+
 
 
 echo "Starting dotfiles installation..."
@@ -39,15 +40,27 @@ else
 fi
 
 # Clone dotfiles repo and move into the directory
-git clone https://github.com/altinkoka/dotfiles.git ~/Dotfiles
-cd ~/Dotfiles
+read -p "Have you already cloned the Dotfiles directory? (y/n) " dotfiles_choice
+if [ "$dotfiles_choice" == "y" ] || [ "$dotfiles_choice" == "Y" ]; then
+  echo "Moving into Dotfiles directory..."
+  cd ~/Dotfiles
+else
+  git clone https://github.com/altinkoka/dotfiles.git ~/Dotfiles
+  cd ~/Dotfiles
+fi
 
-# Install packages from pacman and yay
-echo "Installing packages from pacman..."
-sudo pacman -S --noconfirm --needed - < paclist.txt
-
-echo "Installing packages from yay..."
-yay -S --noconfirm --needed - < yaylist.txt
+# Install the appropriate packages based on user input
+if [ "$choice" == "1" ]; then
+  # Install all apps
+  echo "Installing all system apps..."
+  sudo pacman -S --noconfirm --needed - < paclist.txt
+  yay -S --noconfirm --needed - < yaylist.txt
+elif [ "$choice" == "2" ]; then
+  # Install only clean system apps
+  echo "Installing only apps for a clean system..."
+  sudo pacman -S --noconfirm --needed - < pac-clean.txt
+  yay -S --noconfirm --needed - < yay-clean.txt
+fi
 
 # Copy fonts to /usr/share/fonts
 echo "Copying fonts to /usr/share/fonts..."
@@ -57,38 +70,52 @@ sudo cp -r fonts/* /usr/share/fonts/
 echo "Copying dotfiles to home directory..."
 cp -r dotfiles/* ~/
 
-# Check if NordVPN is installed, if not install it
-if ! command -v nordvpn &> /dev/null; then
-  echo "NordVPN not found, installing..."
-  yay -S --noconfirm --needed nordvpn-bin
-  sudo systemctl enable nordvpnd.service
-  sudo systemctl start nordvpnd.service
-  sudo gpasswd -a $USER nordvpn
-else
-  echo "NordVPN is already installed."
+# Prompt to install additional programs
+read -p "Do you want to install Teamviewer? (Y/N) " teamviewer_choice
+if [ "$teamviewer_choice" == "Y" ] || [ "$teamviewer_choice" == "y" ]; then
+    if ! command -v teamviewer &> /dev/null; then
+        yay -S --noconfirm teamviewer
+    fi
 fi
 
-# Check if TeamViewer is installed, if not install it
-if ! command -v teamviewer &> /dev/null; then
-  echo "TeamViewer not found, installing..."
-  yay -S --noconfirm --needed teamviewer
-  sudo systemctl enable teamviewerd.service
-  sudo systemctl start teamviewerd.service
-else
-  echo "TeamViewer is already installed."
+read -p "Do you want to install Virtualbox? (Y/N) " virtualbox_choice
+if [ "$virtualbox_choice" == "Y" ] || [ "$virtualbox_choice" == "y" ]; then
+    if ! command -v virtualbox &> /dev/null; then
+        yay -S --noconfirm virtualbox
+    fi
 fi
 
-# Check if VirtualBox is installed, if not install it
-if ! command -v virtualbox &> /dev/null; then
-  echo "VirtualBox not found, installing..."
-  sudo pacman -S --noconfirm --needed virtualbox virtualbox-host-modules-arch
-  sudo modprobe vboxdrv
-  sudo gpasswd -a $USER vboxusers
-  sudo systemctl enable vboxweb.service
-  sudo systemctl start vboxweb.service
-else
-  echo "VirtualBox is already installed."
+read -p "Do you want to install Nordvpn? (Y/N) " nordvpn_choice
+if [ "$nordvpn_choice" == "Y" ] || [ "$nordvpn_choice" == "y" ]; then
+    if ! command -v nordvpn &> /dev/null; then
+        yay -S --noconfirm nordvpn-bin
+    fi
 fi
 
-echo "Installation complete!"
+read -p "Do you want to install Vscodium? (Y/N) " vscodium_choice
+if [ "$vscodium_choice" == "Y" ] || [ "$vscodium_choice" == "y" ]; then
+    if ! command -v codium &> /dev/null; then
+        yay -S --noconfirm vscodium-bin
+    fi
+fi
+
+read -p "Do you want to install SDDM? (Y/N) " sddm_choice
+if [ "$sddm_choice" == "Y" ] || [ "$sddm_choice" == "y" ]; then
+    if ! command -v sddm &> /dev/null; then
+        yay -S --noconfirm sddm
+        sudo systemctl enable sddm.service
+    fi
+fi
+
+read -p "Do you want to install Network Manager applet? (Y/N) " npaplet_choice
+if [ "$npaplet_choice" == "Y" ] || [ "$npaplet_choice" == "y" ]; then
+    if ! command -v nm-applet &> /dev/null; then
+        yay -S --noconfirm network-manager-applet
+    fi
+fi
+
+
+
+
+echo "Installation complete!Enjoy!"
 

@@ -9,6 +9,7 @@ bluez
 bluez-tools
 bluez-utils
 chromium
+clamav
 cuda-tools
 efibootmgr
 element-desktop

@@ -1,0 +1,15 @@
+engrampa 
+thunar-archive-plugin 
+file-roller 
+xarchiver 
+ark 
+thunar-volman 
+raw-thumbnailer 
+gvfs 
+ttf-font-awesome 
+waybar-experimental-git 
+pavucontrol 
+wlogout 
+xfce-polkit
+notepadqq
+

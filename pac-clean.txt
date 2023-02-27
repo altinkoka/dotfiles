@@ -1,0 +1,26 @@
+swaybg
+swayidle 
+swaylock
+wlroots
+wl-clipboard wofi
+mako
+grim 
+slurp 
+wf-recorder
+light 
+pulsemixer 
+yad
+mpv
+mpd 
+mpc 
+ncmpcpp
+alacritty
+thunar
+geany 
+viewnior 
+viewnior 
+imagemagick
+xorg-xwayland 
+xdg-desktop-portal-wlr
+fish
+ranger
