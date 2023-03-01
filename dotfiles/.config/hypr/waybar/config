@@ -1,6 +1,17 @@
-// Copyright (C) 2020-2023 Aditya Shakya <adi1090x@gmail.com>
-//
-// Waybar config file
+/////////////////////////////////////////////////////////
+//                                                     //
+//  Waybar Configuration File                          //
+//                                                     //
+//  Author: Iglinsc <igli.linux@gmail.com>             //
+//                                                     //
+//  This file contains the main configuration for      //
+//  Waybar, including the position, padding, and       //
+//  tray settings.                                     //
+//                                                     //
+/////////////////////////////////////////////////////////
+
+// Config starts here
+
 {
     "include": "~/.config/hypr/waybar/modules",
     "name": "main-bar", 			// Waybar name

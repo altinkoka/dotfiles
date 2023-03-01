@@ -1,8 +1,14 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-## Copyright (C) 2020-2023 Aditya Shakya <adi1090x@gmail.com>
-##
-## Set GTK Themes, Icons, Cursor and Fonts
+#
+# Set Hyprland GTK Theme,Icons , Cursor and Fonts
+#
+# Author: Iglinsc <igli.linux@gmail.com>
+#
+# Bash script starts here
+#
+
+
 
 THEME='Blackarch'
 ICONS='Blackarch'

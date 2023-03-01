@@ -1,8 +1,14 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-## Copyright (C) 2020-2023 Aditya Shakya <adi1090x@gmail.com>
-##
-## Script to take screenshots with grim, slurp (in Wayland)
+#
+# Script to take screenshots with grim, slurp 
+#
+# Author: Iglinsc <igli.linux@gmail.com>
+#
+# Bash script starts here
+#
+
+
 
 iDIR="$HOME/.config/hypr/mako/icons"
 

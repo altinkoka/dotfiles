@@ -1,8 +1,14 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-## Copyright (C) 2020-2023 Aditya Shakya <adi1090x@gmail.com>
-##
-## launch waybar with alt config
+#
+# Launch Waybar with alt Config
+#
+# Author: Iglinsc <igli.linux@gmail.com>
+#
+# Bash script starts here
+#
+
+
 
 CONFIG="$HOME/.config/hypr/waybar/config"
 STYLE="$HOME/.config/hypr/waybar/style.css"

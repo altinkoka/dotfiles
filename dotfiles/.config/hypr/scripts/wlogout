@@ -1,8 +1,14 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-## Copyright (C) 2020-2023 Aditya Shakya <adi1090x@gmail.com>
-##
-## wlogout with alt layout and style file
+#
+# Hyprland wogout Script with alt Layout and style file
+#
+# Author: Iglinsc <igli.linux@gmail.com>
+#
+# Bash script starts here
+#
+
+
 
 LAYOUT="$HOME/.config/hypr/wlogout/layout"
 STYLE="$HOME/.config/hypr/wlogout/style.css"

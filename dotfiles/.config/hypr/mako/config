@@ -1,6 +1,14 @@
-## Copyright (C) 2020-2023 Aditya Shakya <adi1090x@gmail.com>
-##
-## Mako configuration file
+#############################################################
+#                                                           #
+#  Mako Notification Daemon Configuration File              #
+#                                                           #
+#  Author: Iglinsc <igli.linux@gmail.com>                   #
+#                                                           #
+#  This file contains configuration settings for the Mako   #
+#  notification daemon.                                     #
+#                                                           #
+#############################################################
+
 
 # GLOBAL CONFIGURATION OPTIONS
 max-history=100

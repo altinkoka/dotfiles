@@ -1,8 +1,14 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-## Copyright (C) 2020-2023 Aditya Shakya <adi1090x@gmail.com>
-##
-## Script To Manage Speaker Volume For Archcraft (in Wayland).
+#
+# Script To Manage Speaker Volume in Hyprland
+#
+# Author: Iglinsc <igli.linux@gmail.com>
+#
+# Bash script starts here
+#
+
+
 
 iDIR="$HOME/.config/hypr/mako/icons"
 notify_cmd='notify-send -h string:x-canonical-private-synchronous:sys-notify-volume -u low'

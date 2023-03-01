@@ -1,8 +1,14 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-## Copyright (C) 2020-2023 Aditya Shakya <adi1090x@gmail.com>
-##
-## launch wofi with alt config
+#
+# Launch wofi with alt config 
+#
+# Author: Iglinsc <igli.linux@gmail.com>
+#
+# Bash script starts here
+#
+
+
 
 CONFIG="$HOME/.config/hypr/wofi/config"
 STYLE="$HOME/.config/hypr/wofi/style.css"

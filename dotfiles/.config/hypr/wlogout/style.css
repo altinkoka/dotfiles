@@ -1,6 +1,16 @@
-/* 
- * Copyright (C) 2020-2023 Aditya Shakya <adi1090x@gmail.com>
-*/
+/*********************************************************
+ *                                                       *
+ *  Wlogout  Style File                                  *
+ *                                                       *
+ *  Author: Iglinsc <igli.linux@gmail.com>               *
+ *                                                       *
+ *  This file sets up the style for Wlogout,including    *
+ *  the colors, font size, and other visual elements.    *
+ *                                                       *
+ *********************************************************/
+
+/* Config starts here */
+
 
 /** ********** Fonts ********** **/
 * {

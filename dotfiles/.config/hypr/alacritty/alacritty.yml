@@ -1,8 +1,13 @@
-## Copyright (C) 2020-2023 Aditya Shakya <adi1090x@gmail.com>
-##
-## Configuration for Alacritty, the GPU enhanced terminal emulator.
-## It's a very basic and simple config file, for full configuration...
-## See, /usr/share/doc/alacritty/example/alacritty.yml
+#############################################################
+#                                                           #
+#  Alacritty Terminal Emulator Configuration File           #
+#                                                           #
+#  Author: Iglinsc <igli.linux@gmail.com>                   #
+#                                                           #
+#  This file contains configuration settings for the        #
+#  Alacritty terminal emulator.                             #
+#                                                           #
+#############################################################
 
 ## Import files (Colors, Fonts, Etc)
 import:
@@ -48,6 +53,6 @@ live_config_reload: true
 
 ## Shell
 shell:
-  program: /bin/fish
-  args:
+   program: /bin/fish
+   args:
     - --login

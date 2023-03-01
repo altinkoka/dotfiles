@@ -1,8 +1,13 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-## Copyright (C) 2020-2023 Aditya Shakya <adi1090x@gmail.com>
-##
-## Simple Script To Pick Color Quickly.
+#
+# Hyprland Colorpicker Script
+#
+# Author: Iglinsc <igli.linux@gmail.com>
+#
+# Bash script starts here
+#
+
 
 color=$(grim -g "`slurp -b 01010100 -p`" -t ppm - | convert - -format '%[pixel:p{0,0}]' txt:- | tail -n1 | cut -d' ' -f4)
 image=/tmp/${color}.png
