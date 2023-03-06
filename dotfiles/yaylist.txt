@@ -1,7 +1,7 @@
+catch2-git
 google-chrome
-maltego
 nordvpn-bin
-vscodium
+nvm
 waybar-experimental-git
 wlogout
 xfce-polkit

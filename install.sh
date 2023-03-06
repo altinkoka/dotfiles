@@ -9,7 +9,8 @@ echo "+---------------------------------------------------+"
 
 echo "Welcome to the Arch Linux Setup Script. This script is designed to automate the installation process and save you time and effort. You have the option to choose between installing only the packages required to set up a clean system or the entire package list. Please make your selection accordingly and follow the prompts to complete the installation."
 
-
+# This command will exit the script if it fails
+set -e
 
 echo "Starting dotfiles installation..."
 
@@ -39,7 +40,9 @@ else
   echo "Skipping power management installation."
 fi
 
-#!/bin/bash
+# Installation command for Hyprland
+echo "Installing Hyprland..."
+yay -S --noconfirm --meeded hyprland
 
 # Prompt the user to install the latest NVIDIA drivers
 read -p "Do you want to install the latest NVIDIA drivers? [y/n]: " nvidia_response
@@ -73,8 +76,8 @@ fi
 if [ "$choice" == "1" ]; then
   # Install all apps
   echo "Installing all system apps..."
-  sudo pacman -S --noconfirm --needed - < paclist.txt
-  yay -S --noconfirm --needed - < yaylist.txt
+  sudo pacman -S --noconfirm --needed - < dotfiles/paclist.txt
+  yay -S --noconfirm --needed - < dotfiles/yaylist.txt
 elif [ "$choice" == "2" ]; then
   # Install only clean system apps
   echo "Installing only apps for a clean system..."
@@ -88,7 +91,7 @@ sudo cp -r fonts/* /usr/share/fonts/
 
 # Copy dotfiles to home directory
 echo "Copying dotfiles to home directory..."
-cp -r dotfiles/* ~/
+cd dotfiles/ && cp -r dotfiles/* ~/ 
 
 # Prompt to install additional programs
 read -p "Do you want to install Teamviewer? (Y/N) " teamviewer_choice
