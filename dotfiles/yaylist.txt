@@ -1,0 +1,8 @@
+google-chrome
+maltego
+nordvpn-bin
+vscodium
+waybar-experimental-git
+wlogout
+xfce-polkit
+yay

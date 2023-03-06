@@ -39,6 +39,26 @@ else
   echo "Skipping power management installation."
 fi
 
+#!/bin/bash
+
+# Prompt the user to install the latest NVIDIA drivers
+read -p "Do you want to install the latest NVIDIA drivers? [y/n]: " nvidia_response
+
+if [[ "$nvidia_response" =~ ^[Yy]$ ]]; then
+    # Install the latest NVIDIA drivers
+    sudo pacman -S nvidia nvidia-utils lib32-nvidia-utils
+    sudo mkinitcpio -P
+fi
+
+# Prompt the user to install the latest Intel drivers
+read -p "Do you want to install the latest Intel drivers? [y/n]: " intel_response
+
+if [[ "$intel_response" =~ ^[Yy]$ ]]; then
+    # Install the latest Intel drivers
+    sudo pacman -S xf86-video-intel
+fi
+
+
 # Clone dotfiles repo and move into the directory
 read -p "Have you already cloned the Dotfiles directory? (y/n) " dotfiles_choice
 if [ "$dotfiles_choice" == "y" ] || [ "$dotfiles_choice" == "Y" ]; then
