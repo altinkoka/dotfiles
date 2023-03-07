@@ -2,7 +2,7 @@ catch2-git
 google-chrome
 nordvpn-bin
 nvm
-waybar-experimental-git
+waybar
 wlogout
 xfce-polkit
 yay
