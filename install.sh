@@ -72,6 +72,12 @@ else
   cd ~/Dotfiles
 fi
 
+# Prompt user for choice of apps to install
+echo "Which apps do you want to install?"
+echo "1 - All system apps"
+echo "2 - Only apps for a clean system"
+read choice
+
 # Install the appropriate packages based on user input
 if [ "$choice" == "1" ]; then
   # Install all apps
@@ -91,7 +97,8 @@ sudo cp -r fonts/* /usr/share/fonts/
 
 # Copy dotfiles to home directory
 echo "Copying dotfiles to home directory..."
-cd dotfiles/ && cp -r dotfiles/* ~/ 
+cd dotfiles/ && cp -r * ~/ 
+
 
 # Prompt to install additional programs
 read -p "Do you want to install Teamviewer? (Y/N) " teamviewer_choice
@@ -141,4 +148,21 @@ fi
 
 
 echo "Installation complete!Enjoy!"
+# Execute Hyprland command with countdown
+echo "Logging in the new Desktop in 7... "
+sleep 1
+echo "6... "
+sleep 1
+echo "5... "
+sleep 1
+echo "4... "
+sleep 1
+echo "3... "
+sleep 1
+echo "2... "
+sleep 1
+echo "1... "
+sleep 1
 
+echo  "Enjoy!"
+Hyprland
