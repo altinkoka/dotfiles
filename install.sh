@@ -40,16 +40,21 @@ else
   echo "Skipping power management installation."
 fi
 
-# Installation command for Hyprland
-echo "Installing Hyprland..."
-yay -S --noconfirm --meeded hyprland
+# Check if Hyprland is installed
+if pacman -Qs hyprland >/dev/null ; then
+  echo "Hyprland is already installed."
+else
+  # Install Hyprland
+  echo "Installing Hyprland..."
+  yay -S --noconfirm --needed hyprland
+fi
 
 # Prompt the user to install the latest NVIDIA drivers
 read -p "Do you want to install the latest NVIDIA drivers? [y/n]: " nvidia_response
 
 if [[ "$nvidia_response" =~ ^[Yy]$ ]]; then
     # Install the latest NVIDIA drivers
-    sudo pacman -S nvidia nvidia-utils lib32-nvidia-utils
+    sudo pacman -S --noconfirm --needed nvidia nvidia-utils lib32-nvidia-utils
     sudo mkinitcpio -P
 fi
 
@@ -58,7 +63,7 @@ read -p "Do you want to install the latest Intel drivers? [y/n]: " intel_respons
 
 if [[ "$intel_response" =~ ^[Yy]$ ]]; then
     # Install the latest Intel drivers
-    sudo pacman -S xf86-video-intel
+    sudo pacman -S  --noconfirm --needed xf86-video-intel
 fi
 
 
