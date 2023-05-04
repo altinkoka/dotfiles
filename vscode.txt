@@ -1,0 +1,17 @@
+{
+    "chatgpt.gpt3.apiKey": "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",
+    "tabnine.experimentalAutoImports": true,
+    "workbench.iconTheme": "bearded-icons",
+    "editor.linkedEditing": true,
+    "workbench.colorTheme": "One Dark Pro",
+    "errorLens.statusBarIconsEnabled": true,
+    "errorLens.fontStyleItalic": true,
+    "errorLens.gutterIconsEnabled": true,
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.formatOnSave": true,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "git.autofetch": true,
+    "sync.gist": "bebb01bd83bce164b2741175b052acdd"
+}

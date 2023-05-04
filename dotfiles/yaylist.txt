@@ -1,8 +1,12 @@
 catch2-git
+cava
+gcc11
+gcc11-libs
 google-chrome
 nordvpn-bin
 nvm
-waybar
+ventoy-bin
+waybar-git
 wlogout
 xfce-polkit
 yay
